@@ -1,0 +1,31 @@
+{
+  "name": "parcel2-ssr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn build && node dist/server/index.js",
+    "build": "yarn parcel build --no-optimize"
+  },
+  "targets": {
+    "client": {
+      "source": "client/index.html",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    },
+    "server": {
+      "source": "server/index.js",
+      "context": "node"
+    }
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
